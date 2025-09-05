@@ -1,0 +1,23 @@
+receivers:
+  otlp:
+    protocols:
+      grpc:
+      http:
+        endpoint: 0.0.0.0:${PORT}
+
+exporters:
+  googlecloud:
+    log:
+      default_log_name: "otel-collector"
+
+service:
+   pipelines:
+    traces:
+      receivers: ["otlp"]
+      exporters: ["googlecloud"]
+    metrics:
+      receivers: ["otlp"]
+      exporters: ["googlecloud"]
+    logs:
+      receivers: ["otlp"]
+      exporters: ["googlecloud"]

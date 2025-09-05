@@ -1,0 +1,8 @@
+http-google/bigqueryOpensearchSync/organic-cat-465614-m9-6f2aef9852c2.json
+
+*.json
+
+node_modules/
+venv/
+
+*.log
